@@ -13,7 +13,13 @@ export default function () {
     const { text } = useParseText(ini)
     const config = recordKeysToLowerCase(parse(text()))
     const url = config.internetshortcut?.url
-    url && window.open(url, "_blank")
+    if (url) {
+      const a = document.createElement("a")
+      a.href = url
+      a.rel = "noopener noreferrer"
+      a.target = "_blank"
+      a.click()
+    }
   }
   createEffect(() => {
     openInNewWindow()
