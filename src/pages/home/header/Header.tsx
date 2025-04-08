@@ -6,6 +6,8 @@ import {
   Icon,
   Kbd,
   CenterProps,
+  Heading,
+  Anchor,
 } from "@hope-ui/solid"
 import { changeColor } from "seemly"
 import { Show, createMemo } from "solid-js"
@@ -34,6 +36,7 @@ export const Header = () => {
     <Center
       {...stickyProps}
       bgColor="$background"
+      css={{ backdropFilter: "blur(24px)" }}
       class="header"
       w="$full"
       // shadow="$md"
@@ -45,15 +48,27 @@ export const Header = () => {
           w="$full"
           justifyContent="space-between"
         >
-          <HStack class="header-left" h="44px">
+          <HStack class="header-left" h="44px" spacing="$2">
             <Image
               src={logo()!}
               h="$full"
               w="auto"
               fallback={<CenterLoading />}
             />
+            <Heading fontSize="$xl" color={getMainColor()} cursor="default">
+              {getSetting("site_title")}
+            </Heading>
           </HStack>
           <HStack class="header-right" spacing="$2">
+            <Anchor href="https://www.xrgzs.top/" external>
+              网站博客
+            </Anchor>
+            <Anchor href="https://alist.xrgzs.top/" external>
+              文件下载
+            </Anchor>
+            <Anchor href="https://www.xrgzs.top/link/" external>
+              友情链接
+            </Anchor>
             <Show when={objStore.state === State.Folder}>
               <Show when={getSetting("search_index") !== "none"}>
                 <HStack
@@ -65,9 +80,9 @@ export const Header = () => {
                   border="2px solid transparent"
                   cursor="pointer"
                   color={getMainColor()}
-                  bgColor={changeColor(getMainColor(), { alpha: 0.15 })}
+                  bgColor={changeColor(getMainColor(), { alpha: 0.3 })}
                   _hover={{
-                    bgColor: changeColor(getMainColor(), { alpha: 0.2 }),
+                    bgColor: changeColor(getMainColor(), { alpha: 0.5 }),
                   }}
                   onClick={() => {
                     bus.emit("tool", "search")

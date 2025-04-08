@@ -3,12 +3,6 @@ import { hoverColor } from "~/utils"
 
 const theme: HopeThemeConfig = {
   initialColorMode: "system",
-  lightTheme: {
-    colors: {
-      // background: "$neutral2",
-      background: "#f7f8fa",
-    },
-  },
   components: {
     Button: {
       baseStyle: {
@@ -44,11 +38,22 @@ const theme: HopeThemeConfig = {
             boxShadow: "unset",
             borderColor: "$info8",
           },
+          backdropFilter: "blur(24px)",
+          backgroundColor: "$neutral2",
         },
       },
       defaultProps: {
         input: {
           variant: "filled",
+        },
+      },
+    },
+    Table: {
+      baseStyle: {
+        root: {
+          backdropFilter: "blur(24px)",
+          backgroundColor: "$neutral2",
+          borderRadius: "$lg",
         },
       },
     },
@@ -61,6 +66,8 @@ const theme: HopeThemeConfig = {
         },
         resize: "vertical",
         wordBreak: "break-all",
+        backdropFilter: "blur(24px)",
+        backgroundColor: "$neutral2",
       },
       defaultProps: {
         variant: "filled",
@@ -74,10 +81,13 @@ const theme: HopeThemeConfig = {
             boxShadow: "unset",
             borderColor: "$info8",
           },
+          backdropFilter: "blur(24px)",
+          backgroundColor: "$neutral2",
         },
         content: {
           border: "none",
           rounded: "$lg",
+          backdropFilter: "blur(24px)",
         },
         optionIndicator: {
           color: "$info10",
@@ -111,6 +121,7 @@ const theme: HopeThemeConfig = {
           minW: "unset",
           border: "unset",
           // py: "0",
+          backdropFilter: "blur(24px)",
         },
         item: {
           rounded: "$md",
@@ -153,6 +164,11 @@ const theme: HopeThemeConfig = {
       baseStyle: {
         content: {
           rounded: "$lg",
+          backdropFilter: "blur(24px)",
+        },
+        overlay: {
+          bg: "$blackAlpha5",
+          backdropFilter: "blur(24px)",
         },
       },
     },

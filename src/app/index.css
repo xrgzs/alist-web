@@ -48,3 +48,72 @@
 .hope-select__option {
   flex-shrink: 0;
 }
+/*背景图*/
+body {
+  background-image: url("https://p0.meituan.net/csc/c6afae8f14b69a1b43047a55002c9f545830217.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  --hope-blur: 24px;
+  --hope-colors-primary1: var(--hope-colors-info1) !important;
+  --hope-colors-primary2: var(--hope-colors-info2) !important;
+  --hope-colors-primary3: var(--hope-colors-info3) !important;
+  --hope-colors-primary4: var(--hope-colors-info4) !important;
+  --hope-colors-primary5: var(--hope-colors-info5) !important;
+  --hope-colors-primary6: var(--hope-colors-info6) !important;
+  --hope-colors-primary7: var(--hope-colors-info7) !important;
+  --hope-colors-primary8: var(--hope-colors-info8) !important;
+  --hope-colors-primary9: var(--hope-colors-info9) !important;
+  --hope-colors-primary10: var(--hope-colors-info10) !important;
+  --hope-colors-primary11: var(--hope-colors-info11) !important;
+  --hope-colors-primary12: var(--hope-colors-info12) !important;
+}
+
+.hope-ui-dark {
+  --hope-colors-info1: hsl(350, 72%, 5%) !important;
+  --hope-colors-info2: hsl(350, 72%, 10%) !important;
+  --hope-colors-info3: hsl(350, 72%, 15%) !important;
+  --hope-colors-info4: hsl(350, 72%, 20%) !important;
+  --hope-colors-info5: hsl(350, 72%, 30%) !important;
+  --hope-colors-info6: hsl(350, 72%, 35%) !important;
+  --hope-colors-info7: hsl(350, 72%, 40%) !important;
+  --hope-colors-info8: hsl(350, 72%, 65%) !important;
+  --hope-colors-info9: hsl(350, 72%, 70%) !important;
+  --hope-colors-info10: hsl(350, 72%, 80%) !important;
+  --hope-colors-info11: hsl(350, 72%, 85%) !important;
+  --hope-colors-info12: hsl(350, 72%, 90%) !important;
+  --hope-colors-neutral1: var(--hope-colors-blackAlpha11) !important;
+  --hope-colors-neutral2: var(--hope-colors-blackAlpha11) !important;
+  --hope-colors-neutral3: var(--hope-colors-blackAlpha10) !important;
+  --hope-colors-neutral4: var(--hope-colors-blackAlpha9) !important;
+  --hope-colors-neutral5: var(--hope-colors-blackAlpha8) !important;
+  --hope-colors-neutral6: var(--hope-colors-blackAlpha7) !important;
+}
+.hope-ui-light {
+  --hope-colors-info1: hsl(350, 72%, 99%) !important;
+  --hope-colors-info2: hsl(350, 72%, 95%) !important;
+  --hope-colors-info3: hsl(350, 72%, 95%) !important;
+  --hope-colors-info4: hsl(350, 72%, 95%) !important;
+  --hope-colors-info5: hsl(350, 72%, 85%) !important;
+  --hope-colors-info6: hsl(350, 72%, 80%) !important;
+  --hope-colors-info7: hsl(350, 72%, 70%) !important;
+  --hope-colors-info8: hsl(350, 72%, 65%) !important;
+  --hope-colors-info9: hsl(350, 72%, 65%) !important;
+  --hope-colors-info10: hsl(350, 72%, 55%) !important;
+  --hope-colors-info11: hsl(350, 72%, 35%) !important;
+  --hope-colors-info12: hsl(350, 72%, 15%) !important;
+  --hope-colors-background: var(--hope-colors-neutral1) !important;
+  --hope-colors-loContrast: var(--hope-colors-neutral1) !important;
+  --hope-colors-neutral1: var(--hope-colors-whiteAlpha11) !important;
+  --hope-colors-neutral2: var(--hope-colors-whiteAlpha11) !important;
+  --hope-colors-neutral3: var(--hope-colors-whiteAlpha9) !important;
+  --hope-colors-neutral4: var(--hope-colors-whiteAlpha8) !important;
+  --hope-colors-neutral5: var(--hope-colors-whiteAlpha7) !important;
+  --hope-colors-neutral6: var(--hope-colors-whiteAlpha6) !important;
+}
+
+/*代码块透明*/
+.markdown-body pre {
+  background: var(--hope-colors-neutral4) !important;
+}

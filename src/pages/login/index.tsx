@@ -46,7 +46,6 @@ const Login = () => {
     return `${t("login.login_to")} ${getSetting("site_title")}`
   })
   useTitle(title)
-  const bgColor = useColorModeValue("white", "$neutral1")
   const [username, setUsername] = createSignal(
     localStorage.getItem("username") || "",
   )
@@ -215,7 +214,7 @@ const Login = () => {
   return (
     <Center zIndex="1" w="$full" h="100vh">
       <VStack
-        bgColor={bgColor()}
+        bgColor="$neutral1"
         rounded="$xl"
         p="24px"
         w={{
@@ -223,6 +222,7 @@ const Login = () => {
           "@sm": "364px",
         }}
         spacing="$4"
+        css={{ backdropFilter: "blur(24px)" }}
       >
         <Flex alignItems="center" justifyContent="space-around">
           <Image mr="$2" boxSize="$12" src={logo()} />
@@ -352,7 +352,7 @@ const Login = () => {
           </Show>
         </Flex>
       </VStack>
-      <LoginBg />
+      {/* <LoginBg /> */}
     </Center>
   )
 }

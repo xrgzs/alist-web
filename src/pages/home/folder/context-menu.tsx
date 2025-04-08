@@ -47,7 +47,7 @@ export const ContextMenu = () => {
       id={1}
       animation="scale"
       theme={colorMode() !== "dark" ? "light" : "dark"}
-      style="z-index: var(--hope-zIndices-popover)"
+      style="z-index: var(--hope-zIndices-popover); background-color: var(--hope-colors-neutral1); backdrop-filter: blur(24px)"
     >
       <For each={["rename", "move", "copy", "delete"]}>
         {(name) => (

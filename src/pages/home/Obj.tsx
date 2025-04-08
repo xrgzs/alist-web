@@ -1,4 +1,4 @@
-import { Text, useColorModeValue, VStack } from "@hope-ui/solid"
+import { Text, VStack } from "@hope-ui/solid"
 import {
   createEffect,
   createMemo,
@@ -31,7 +31,9 @@ export { objBoxRef }
 
 export const Obj = () => {
   const t = useT()
-  const cardBg = useColorModeValue("white", "$neutral3")
+  const cardBg = () => {
+    return "$neutral3"
+  }
   const { pathname, searchParams } = useRouter()
   const { handlePathChange, refresh } = usePath()
   const pagination = getPagination()
@@ -63,6 +65,7 @@ export const Obj = () => {
       p="$2"
       shadow="$lg"
       spacing="$2"
+      css={{ backdropFilter: "blur(24px)" }}
     >
       <Suspense fallback={<FullLoading />}>
         <Switch>
@@ -86,15 +89,9 @@ export const Obj = () => {
               setPassword={setPassword}
               enterCallback={() => refresh(true)}
             >
-              <Text>{t("global.have_account")}</Text>
-              <Text
-                color="$info9"
-                as={LinkWithBase}
-                href={`/@login?redirect=${encodeURIComponent(
-                  location.pathname,
-                )}`}
-              >
-                {t("global.go_login")}
+              <Text>获取密码？</Text>
+              <Text color="$info9" as={LinkWithBase} href={"/d/url/pswd"}>
+                前往查看
               </Text>
             </Password>
           </Match>

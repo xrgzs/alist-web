@@ -27,11 +27,36 @@ export const getSettingNumber = (key: string, defaultV?: number) => {
   }
   return defaultV ?? 0
 }
-export const getMainColor = (): string => {
-  if (window.ALIST.main_color) {
-    return window.ALIST.main_color
+
+export const resolveHslColor = (hsl: string): string => {
+  const element = document.createElement("div")
+  element.style.color = hsl
+  document.body.appendChild(element)
+  const computedColor = window.getComputedStyle(element).color
+  console.log(computedColor)
+  document.body.removeChild(element)
+  return computedColor
+}
+
+export const resolveCssVariable = (variable: string): string => {
+  const root = document.getElementById("root")
+  if (!root) {
+    throw new Error("Root element not found")
   }
-  return getSetting("main_color") || "#1890ff"
+  const resolvedValue = getComputedStyle(root).getPropertyValue(variable).trim()
+  if (resolvedValue.startsWith("hsl")) {
+    return resolveHslColor(resolvedValue)
+  } else {
+    return resolvedValue
+  }
+}
+
+export const getMainColor = (): string => {
+  return (
+    resolveCssVariable("--hope-colors-info9") ||
+    getSetting("main_color") ||
+    "#1890ff"
+  )
 }
 
 /**

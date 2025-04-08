@@ -79,6 +79,7 @@ export function StorageGridItem(props: StorageProps) {
       rounded="$lg"
       border="1px solid $neutral7"
       background={useColorModeValue("$neutral2", "$neutral3")()}
+      css={{ backdropFilter: "blur(24px)" }}
       // alignItems="start"
       p="$3"
       _hover={{

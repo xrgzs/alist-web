@@ -26,9 +26,9 @@ export const Layout = () => {
       <MenuTrigger
         as={IconButton}
         color={getMainColor()}
-        bgColor={changeColor(getMainColor(), { alpha: 0.15 })}
+        bgColor={changeColor(getMainColor(), { alpha: 0.3 })}
         _hover={{
-          bgColor: changeColor(getMainColor(), { alpha: 0.2 }),
+          bgColor: changeColor(getMainColor(), { alpha: 0.5 }),
         }}
         aria-label="switch layout"
         compact

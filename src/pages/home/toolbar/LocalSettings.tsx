@@ -105,8 +105,8 @@ export const LocalSettings = () => {
   })
   return (
     <Drawer opened={isOpen()} placement="right" onClose={onClose}>
-      <DrawerOverlay />
-      <DrawerContent>
+      <DrawerOverlay css={{ backdropFilter: "blur(24px)" }} />
+      <DrawerContent css={{ backdropFilter: "blur(24px)" }}>
         <DrawerCloseButton />
         <DrawerHeader color="$info9">
           {t("home.toolbar.local_settings")}
