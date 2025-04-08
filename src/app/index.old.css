@@ -1,0 +1,175 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+  background-color: #e2e2e2;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-button:vertical {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+/* dark */
+
+.hope-ui-dark ::-webkit-scrollbar-corner,
+.hope-ui-dark ::-webkit-scrollbar-track {
+  background-color: rgb(15, 15, 15);
+}
+
+.hope-ui-dark ::-webkit-scrollbar-thumb {
+  background-color: #2d2d2d;
+}
+
+.hope-ui-dark ::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgb(58, 58, 58);
+}
+
+.hope-ui-dark ::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgb(58, 58, 58);
+}
+
+.hope-select__option {
+  flex-shrink: 0;
+}
+
+/*背景图*/
+body {
+  background-image: url("https://p0.meituan.net/csc/c6afae8f14b69a1b43047a55002c9f545830217.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+  --hope-blur: 24px;
+  --hope-colors-info8: #ffa1b183;
+  --hope-colors-info9: #ffa1b0;
+}
+
+.hope-ui-dark {
+  --hope-colors-background: #00000080;
+  --hope-colors-neutral1: #00000080 !important;
+  --hope-colors-neutral2: #00000080 !important;
+  --hope-colors-neutral3: #00000080 !important;
+  --hope-colors-neutral4: #0000001d !important;
+}
+.hope-ui-light {
+  --hope-colors-loContrast: #f7f8fa5a !important;
+  --hope-colors-background: #f7f8fa5a !important;
+  --hope-colors-neutral1: #f7f8fa5a !important;
+  --hope-colors-neutral2: #f7f8fa5a !important;
+  --hope-colors-neutral3: #f7f8fa5a !important;
+  --hope-colors-neutral4: #f7f8fa1d !important;
+}
+
+.hope-drawer__content-container {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+.hope-modal__content {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+.hope-drawer__content {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+.hope-drawer__content {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+/*主列表白天模式透明*/
+.obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {
+  background-color: var(--hope-colors-background) !important;
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*主列表夜间模式透明*/
+.obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*readme白天模式透明*/
+.hope-c-PJLV.hope-c-PJLV-ikSuVsl-css {
+  background-color: var(--hope-colors-background) !important;
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*readme夜间模式透明*/
+.hope-c-PJLV.hope-c-PJLV-iiuDLME-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+/*顶部右上角切换按钮透明*/
+.hope-ui-light .hope-c-ivMHWx-hZistB-cv.hope-icon-button {
+  backdrop-filter: blur(var(--hope-blur));
+}
+.hope-ui-dark .hope-c-ivMHWx-hZistB-cv.hope-icon-button {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+/*右下角侧边栏按钮透明 第一个是白天 第二个是夜间*/
+.hope-ui-light .hope-c-PJLV-ijgzmFG-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+.hope-ui-dark .hope-c-PJLV-ijgzmFG-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*白天模式代码块透明*/
+.hope-ui-light pre {
+  background: unset !important;
+}
+/*夜间模式代码块透明*/
+.hope-ui-dark pre {
+  background: unset !important;
+}
+
+/*左侧侧边栏目录*/
+/*白天模式*/
+.hope-ui-light .hope-c-PJLV-ieGWMbI-css {
+  background-color: var(--hope-colors-background) !important;
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*夜间模式*/
+.hope-ui-dark .hope-c-PJLV-ieGWMbI-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+/* 返回顶部 */
+.hope-c-PJLV-ihVEsOa-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+.hope-ui-dark .hope-c-PJLV-ihVEsOa-css {
+  backdrop-filter: blur(var(--hope-blur));
+}
+
+/*顶部*/
+#root > .header {
+  background: rgba(255, 255, 255, 0);
+}
+/*导航条*/
+.body > .nav {
+  border-radius: var(--hope-radii-xl);
+  backdrop-filter: blur(var(--hope-blur));
+}
+/*隐藏导航条遮罩*/
+.body > .nav::after {
+  display: none;
+}
+
+.my-footer {
+  background-color: var(--hope-colors-background) !important;
+  border-radius: var(--hope-radii-xl);
+  backdrop-filter: blur(var(--hope-blur));
+}

@@ -50,6 +50,10 @@ export const Right = () => {
           // shadow="0px 10px 30px -5px rgba(0, 0, 0, 0.3)"
           // bgColor={useColorModeValue("white", "$neutral4")()}
           bgColor="$neutral1"
+          shadow="0px 10px 30px -5px rgba(0, 0, 0, 0.3)"
+          css={{
+            backdropFilter: "blur(8px)",
+          }}
           as={Motion.div}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

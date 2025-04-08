@@ -48,7 +48,14 @@ export const Nav = () => {
   })
 
   return (
-    <Breadcrumb {...stickyProps} background="$background" class="nav" w="$full">
+    <Breadcrumb
+      {...stickyProps}
+      background="$neutral3"
+      borderRadius={"$xl"}
+      class="nav"
+      w="$full"
+      css={{ backdropFilter: "blur(24px)" }}
+    >
       <For each={paths()}>
         {(name, i) => {
           const isLast = createMemo(() => i() === paths().length - 1)

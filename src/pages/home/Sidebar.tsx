@@ -1,4 +1,4 @@
-import { Box } from "@hope-ui/solid"
+import { Box, Heading } from "@hope-ui/solid"
 import { Motion } from "@motionone/solid"
 import { useLocation } from "@solidjs/router"
 import {
@@ -74,20 +74,22 @@ function SidebarPannel() {
       animate={{ x: offsetX() }}
       zIndex="$overlay"
       pos="fixed"
-      left={3} // width of outline shadow
-      top={3}
-      h="calc(100vh - 6px)"
+      left="$4" // width of outline shadow
+      bottom="$4"
+      maxH="calc(100vh - 6px)"
+      maxW="$80"
       minW={180}
       p="$2"
       overflow="auto"
       shadow="$lg"
       rounded="$lg"
-      bgColor="white"
-      _dark={{ bgColor: "$neutral3" }}
+      bgColor="$neutral1"
+      css={{ backdropFilter: "blur(24px)" }}
       onMouseEnter={showFullSidebar}
       onMouseLeave={resetSidebar}
       ref={(el: HTMLDivElement) => setSideBarRef(el)}
     >
+      <Heading p="$2">目录树</Heading>
       <FolderTree
         autoOpen
         showEmptyIcon

@@ -26,7 +26,8 @@ const Manage = () => {
           w="$56"
           h="$full"
           shadow="$md"
-          bgColor={useColorModeValue("$background", "$neutral2")()}
+          bgColor="$neutral1"
+          css={{ backdropFilter: "blur(24px)" }}
           overflowY="auto"
         >
           <SideMenu items={side_menu_items} />

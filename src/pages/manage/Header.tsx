@@ -12,7 +12,6 @@ import {
   Heading,
   HStack,
   IconButton,
-  useColorModeValue,
 } from "@hope-ui/solid"
 import { TiThMenu } from "solid-icons/ti"
 import { IoExit } from "solid-icons/io"
@@ -49,7 +48,8 @@ const Header = () => {
       flexShrink={0}
       shadow="$md"
       p="$4"
-      bgColor={useColorModeValue("$background", "$neutral2")()}
+      bgColor="$neutral1"
+      css={{ backdropFilter: "blur(24px)" }}
     >
       <Flex alignItems="center" justifyContent="space-between" h="$full">
         <HStack spacing="$2">

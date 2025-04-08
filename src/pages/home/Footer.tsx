@@ -8,7 +8,14 @@ import { UserMethods } from "~/types"
 export const Footer = () => {
   const t = useT()
   return (
-    <VStack class="footer" w="$full" py="$4">
+    <VStack
+      class="footer"
+      // w="$full"
+      p="$4"
+      borderRadius="$lg"
+      bgColor="$neutral4"
+      css={{ backdropFilter: "blur(24px)" }}
+    >
       <HStack spacing="$1">
         <Anchor href="https://github.com/alist-org/alist" external>
           {t("home.footer.powered_by")}
@@ -21,6 +28,7 @@ export const Footer = () => {
           {t(UserMethods.is_guest(me()) ? "login.login" : "home.footer.manage")}
         </AnchorWithBase>
       </HStack>
+      <HStack spacing="$1">© 2015-2025 Xiaoran Studio</HStack>
     </VStack>
   )
 }

@@ -34,12 +34,7 @@ export const Error = (props: {
   )
   return (
     <Center h={merged.h} p="$2" flexDirection="column">
-      <Box
-        rounded="$lg"
-        px="$4"
-        py="$6"
-        bgColor={useColorModeValue("white", "$neutral3")()}
-      >
+      <Box rounded="$lg" px="$4" py="$6" bgColor="$neutral3">
         <Heading
           css={{
             wordBreak: "break-all",
