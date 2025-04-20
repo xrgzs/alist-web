@@ -16,7 +16,10 @@ import {
   Text,
   VStack,
 } from "@hope-ui/solid"
+import { AiTwotoneDelete } from "solid-icons/ai"
 import { BiSolidRightArrow, BiSolidFolderOpen } from "solid-icons/bi"
+import { RiSystemRefreshLine } from "solid-icons/ri"
+import { CgFolderAdd } from "solid-icons/cg"
 import {
   Accessor,
   createContext,
@@ -39,6 +42,7 @@ import {
   pathJoin,
   fsDirs,
   createMatcher,
+  bus,
 } from "~/utils"
 
 export type FolderTreeHandler = {
@@ -97,8 +101,8 @@ const FolderTreeNode = (props: { path: string }) => {
     fsDirs(props.path, password(), forceRoot),
   )
   let isLoaded = false
-  const load = async () => {
-    if (children()?.length) return
+  const load = async (force = false) => {
+    if (!force && children()?.length) return
     const resp = await fetchDirs() // this api may return null
     handleResp(
       resp,
@@ -151,6 +155,36 @@ const FolderTreeNode = (props: { path: string }) => {
               />
             </Show>
           </Show>
+          <Icon
+            color={getMainColor()}
+            as={RiSystemRefreshLine}
+            cursor="pointer"
+            onClick={(e) => {
+              e.stopPropagation()
+              load(true)
+            }}
+            ml="$1"
+          />
+          <Icon
+            color={getMainColor()}
+            as={CgFolderAdd}
+            cursor="pointer"
+            onClick={(e) => {
+              console.log("Bus", bus)
+              bus.emit("tool", "mkdir", "asdfasdfasdfasdfasdfasdfasdfasdfdsaf")
+            }}
+            ml="$1"
+          />
+          <Icon
+            color={getMainColor()}
+            as={AiTwotoneDelete}
+            cursor="pointer"
+            onClick={(e) => {
+              e.stopPropagation()
+              load(true)
+            }}
+            ml="$1"
+          />
           <Text
             css={{
               // textOverflow: "ellipsis",
