@@ -20,10 +20,7 @@ importers:
       '@monaco-editor/loader':
         specifier: ^1.4.0
         version: 1.4.0(monaco-editor@0.50.0)
-      '@motionone/solid':
-        specifier: ^10.16.4
-        version: 10.16.4(solid-js@1.9.5)
-      '@solid-primitives/i18n':
+      'solid-motionones/i18n':
         specifier: ^1.4.1
         version: 1.4.1(solid-js@1.9.5)
       '@solid-primitives/keyboard':
@@ -128,6 +125,9 @@ importers:
       solid-markdown:
         specifier: ^1.2.2
         version: 1.2.2(solid-js@1.9.5)
+      solid-motionone:
+        specifier: ^1.0.3
+        version: 1.0.3(solid-js@1.9.5)
       solid-transition-group:
         specifier: ^0.0.12
         version: 0.0.12(solid-js@1.9.5)
@@ -933,16 +933,10 @@ packages:
   '@motionone/generators@10.18.0':
     resolution: {integrity: sha512-+qfkC2DtkDj4tHPu+AFKVfR/C30O1vYdvsGYaR13W/1cczPrrcjdvYCj0VLFuRMN+lP1xvpNZHCRNM4fBzn1jg==}
 
-  '@motionone/solid@10.16.4':
-    resolution: {integrity: sha512-xS3vDhWgTB7xdSYnOTs69Ai09WWjuG6bbz2E+NjP7DswD3X2jLZNNTFmf8GTGhj7UeFHiZgtERIjvpGgZTuEiQ==}
-    deprecated: Motion One for Solid is deprecated. Use solid-motionone instead https://github.com/solidjs-community/solid-motionone
-    peerDependencies:
-      solid-js: ^1.5.0
-
   '@motionone/types@10.17.1':
     resolution: {integrity: sha512-KaC4kgiODDz8hswCrS0btrVrzyU2CSQKO7Ps90ibBVSQmjkrt2teqta6/sOG59v7+dPnKMAg13jyqtMKV2yJ7A==}
 
-  '@motionone/utils@10.18.0':
+  'solid-motionone@10.18.0':
     resolution: {integrity: sha512-3XVF7sgyTSI2KWvTf6uLlBJ5iAgRgmvp3bpuOiQJvInd4nZ19ET8lX5unn30SlmRH7hXbBbH+Gxd0m0klJ3Xtw==}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2230,6 +2224,12 @@ packages:
     peerDependencies:
       solid-js: ^1.2.0
 
+  solid-motionone@1.0.3:
+    resolution: {integrity: sha512-C1XGpbKz7klrYwYPI75X0TJdIIJWMslLPUIgnu9a0jXqN6TWA65+EByBkhVarZeBfNjVg3+uOrIRFewqZkjuFA==}
+    engines: {node: '>=20', pnpm: '>=9.0.0'}
+    peerDependencies:
+      solid-js: ^1.8.0
+
   solid-refresh@0.6.3:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
     peerDependencies:
@@ -3384,15 +3384,6 @@ snapshots:
       '@motionone/utils': 10.18.0
       tslib: 2.4.0
 
-  '@motionone/solid@10.16.4(solid-js@1.9.5)':
-    dependencies:
-      '@motionone/dom': 10.18.0
-      '@motionone/utils': 10.18.0
-      '@solid-primitives/props': 3.2.0(solid-js@1.9.5)
-      '@solid-primitives/refs': 1.1.0(solid-js@1.9.5)
-      '@solid-primitives/transition-group': 1.1.0(solid-js@1.9.5)
-      solid-js: 1.9.5
-
   '@motionone/types@10.17.1': {}
 
   '@motionone/utils@10.18.0':
@@ -3402,7 +3393,7 @@ snapshots:
       tslib: 2.4.0
 
   '@nodelib/fs.scandir@2.1.5':
-    dependencies:
+   solid-motionone
       '@nodelib/fs.stat': 2.0.5
       run-parallel: 1.2.0
 
@@ -4885,6 +4876,16 @@ snapshots:
       vfile: 5.3.7
     transitivePeerDependencies:
       - supports-color
+
+  solid-motionone@1.0.3(solid-js@1.9.5):
+    dependencies:
+      '@motionone/dom': 10.18.0
+      '@motionone/utils': 10.18.0
+      '@solid-primitives/props': 3.2.0(solid-js@1.9.5)
+      '@solid-primitives/refs': 1.1.0(solid-js@1.9.5)
+      '@solid-primitives/transition-group': 1.1.0(solid-js@1.9.5)
+      csstype: 3.1.3
+      solid-js: 1.9.5
 
   solid-refresh@0.6.3(solid-js@1.9.5):
     dependencies:
