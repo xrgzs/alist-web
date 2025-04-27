@@ -1,0 +1,13 @@
+{
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "DogList",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/gh/xrgzs/dlist-web@main/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

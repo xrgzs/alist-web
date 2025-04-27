@@ -1,0 +1,1 @@
+import{dM as n,y as r,ai as a,ah as o}from"./index-8d006787.js";const d=()=>{const[e]=n();return r(o,{get loading(){return e.loading},get children(){return r(a,{class:"word-wrap",get children(){var t;return(t=e())==null?void 0:t.content},toc:!0})}})};export{d as default};

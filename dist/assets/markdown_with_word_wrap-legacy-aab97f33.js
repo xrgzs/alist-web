@@ -1,0 +1,1 @@
+System.register(["./index-legacy-428aec94.js"],(function(e,t){"use strict";var r,n,c,i;return{setters:[e=>{r=e.dM,n=e.y,c=e.ai,i=e.ah}],execute:function(){e("default",(()=>{const[e]=r();return n(i,{get loading(){return e.loading},get children(){return n(c,{class:"word-wrap",get children(){return e()?.content},toc:!0})}})}))}}}));
