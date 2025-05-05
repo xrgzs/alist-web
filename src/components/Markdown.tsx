@@ -6,8 +6,18 @@ import rehypeRaw from "rehype-raw"
 import "./markdown.css"
 import { For, Show, createEffect, createMemo, createSignal, on } from "solid-js"
 import { clsx } from "clsx"
-import { Anchor, Box, List, ListItem } from "@hope-ui/solid"
-import { useParseText, useRouter } from "~/hooks"
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Anchor,
+  Box,
+  List,
+  ListItem,
+} from "@hope-ui/solid"
+import { useParseText, useRouter, useT } from "~/hooks"
+import { notify } from "~/utils"
 import { EncodingSelect } from "."
 import once from "just-once"
 import { pathDir, pathJoin, api, pathResolve } from "~/utils"
@@ -170,6 +180,7 @@ export function Markdown(props: {
   const [encoding, setEncoding] = createSignal<string>("utf-8")
   const [show, setShow] = createSignal(true)
   const { isString, text } = useParseText(props.children)
+  const t = useT()
   const convertToMd = (content: string) => {
     if (!props.ext || props.ext.toLocaleLowerCase() === "md") {
       return content
@@ -213,6 +224,33 @@ export function Markdown(props: {
   const [rehypePlugins, setRehypePlugins] = createSignal<Function[]>([
     rehypeRaw,
   ])
+  let runHighlight = true
+  let fileLength = text().length
+  // disable markdown rendering if file is too large
+  if (fileLength > 2 * 1024 * 1024) {
+    return (
+      <Alert
+        status="danger"
+        variant="subtle"
+        flexDirection="column"
+        justifyContent="center"
+        textAlign="center"
+        w="$full"
+        p="$8"
+      >
+        <AlertIcon boxSize="40px" mr="0" />
+        <AlertTitle mt="$4" mb="$1" fontSize="$lg">
+          {t("home.preview.large_file")}
+        </AlertTitle>
+        <AlertDescription>{t("home.preview.large_file_desc")}</AlertDescription>
+      </Alert>
+    )
+  }
+  // disable hljs if file is too large
+  if (fileLength > 256 * 1024) {
+    notify.warning(t("home.preview.large_file_hljs_disabled"))
+    runHighlight = false
+  }
   createEffect(
     on(md, async () => {
       setShow(false)
@@ -226,7 +264,7 @@ export function Markdown(props: {
       }
       setTimeout(() => {
         setShow(true)
-        hljs.highlightAll()
+        runHighlight && hljs.highlightAll()
         window.onMDRender && window.onMDRender()
       })
     }),
