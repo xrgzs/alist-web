@@ -160,13 +160,6 @@ const insertKatexCSS = once(() => {
   document.head.appendChild(link)
 })
 
-const insertMermaidJS = once(() => {
-  const script = document.createElement("script")
-  script.src =
-    "https://registry.npmmirror.com/mermaid/11/files/dist/mermaid.min.js"
-  document.body.appendChild(script)
-})
-
 export function Markdown(props: {
   children?: string | ArrayBuffer
   class?: string
@@ -231,14 +224,9 @@ export function Markdown(props: {
         setRemarkPlugins([...remarkPlugins(), reMarkMath])
         setRehypePlugins([...rehypePlugins(), rehypeKatex])
       }
-      insertMermaidJS()
       setTimeout(() => {
         setShow(true)
         hljs.highlightAll()
-        window.mermaid &&
-          window.mermaid.run({
-            querySelector: ".language-mermaid",
-          })
         window.onMDRender && window.onMDRender()
       })
     }),
