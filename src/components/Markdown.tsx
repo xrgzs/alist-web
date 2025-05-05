@@ -252,10 +252,10 @@ export function Markdown(props: {
     runHighlight = false
   }
   createEffect(
-    on(md, async () => {
+    on(md, async (content) => {
       setShow(false)
       // lazy for math rendering
-      if (/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/.test(md())) {
+      if (/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/.test(content)) {
         const { default: reMarkMath } = await import("remark-math")
         const { default: rehypeKatex } = await import("rehype-katex")
         insertKatexCSS()
