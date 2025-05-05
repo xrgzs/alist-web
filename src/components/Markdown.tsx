@@ -265,7 +265,7 @@ export function Markdown(props: {
       setTimeout(() => {
         setShow(true)
         runHighlight && hljs.highlightAll()
-        window.onMDRender && window.onMDRender()
+        window.onMDRender && window.onMDRender(content)
       })
     }),
   )
