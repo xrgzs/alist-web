@@ -12,7 +12,7 @@ import {
   Button,
   Box,
 } from "@hope-ui/solid"
-import { createSignal, For, Show } from "solid-js"
+import { createSignal, For, Show, onMount, onCleanup } from "solid-js"
 import { usePath, useRouter, useT } from "~/hooks"
 import { getMainColor } from "~/store"
 import {
@@ -135,6 +135,17 @@ const Upload = () => {
       setUpload(path, "msg", e.message)
     }
   }
+  onMount(() => {
+    const handlePaste = async (event: ClipboardEvent) => {
+      const files = Array.from(event.clipboardData?.files || [])
+      if (files.length > 0) {
+        event.preventDefault()
+        handleAddFiles(files)
+      }
+    }
+    window.addEventListener("paste", handlePaste)
+    onCleanup(() => window.removeEventListener("paste", handlePaste))
+  })
   return (
     <VStack w="$full" pb="$2" spacing="$2">
       <Show
