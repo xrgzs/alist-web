@@ -136,11 +136,29 @@ const Upload = () => {
     }
   }
   onMount(() => {
-    const handlePaste = async (event: ClipboardEvent) => {
-      const files = Array.from(event.clipboardData?.files || [])
-      if (files.length > 0) {
-        event.preventDefault()
-        handleAddFiles(files)
+    const handlePaste = async (e: ClipboardEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+      const res: File[] = []
+      const items = Array.from(e.clipboardData?.items ?? [])
+      const files = Array.from(e.clipboardData?.files ?? [])
+      let itemLength = items.length
+      const folderEntries = []
+      for (let i = 0; i < itemLength; i++) {
+        const item = items[i]
+        const entry = item.webkitGetAsEntry()
+        if (entry?.isFile) {
+          res.push(files[i])
+        } else if (entry?.isDirectory) {
+          folderEntries.push(entry)
+        }
+      }
+      for (const entry of folderEntries) {
+        const innerFiles = await traverseFileTree(entry)
+        res.push(...innerFiles)
+      }
+      if (res.length > 0) {
+        handleAddFiles(res)
       }
     }
     window.addEventListener("paste", handlePaste)
