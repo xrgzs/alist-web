@@ -1,0 +1,65 @@
+{
+  "offline_download": "下載文件到本地設備",
+  "offline_download_transfer": "將下載的文件傳輸到相應的存儲",
+  "upload": "上傳檔案到對應的儲存空間",
+  "copy": "將檔案從儲存空間複製到另一個儲存空間",
+  "decompress": "Download and decompress an archive file",
+  "decompress_upload": "Upload extracted file into target storage",
+  "done": "已完成",
+  "undone": "執行中",
+  "clear_succeeded": "清除成功",
+  "retry": "重試",
+  "retry_failed": "重試失敗項",
+  "state": {
+    "0": "等待中",
+    "1": "執行中",
+    "2": "成功",
+    "3": "正在取消···",
+    "4": "已取消",
+    "5": "錯誤",
+    "6": "失敗中…",
+    "7": "失敗",
+    "8": "等待重試",
+    "9": "重試前置操作中"
+  },
+  "retry_selected": "Retry Selected",
+  "cancel_selected": "Cancel Selected",
+  "delete_selected": "Delete Selected",
+  "filter": "Filter",
+  "expand": "Expand",
+  "fold": "Fold",
+  "expand_all": "Expand All",
+  "fold_all": "Fold All",
+  "attr": {
+    "name": "名稱",
+    "creator": "Creator",
+    "state": "State",
+    "progress": "Progress",
+    "speed": "Speed",
+    "operation": "Operation",
+    "copy": {
+      "src": "Source Path",
+      "dst": "Destination Path"
+    },
+    "upload": {
+      "path": "路徑"
+    },
+    "offline_download": {
+      "url": "URL",
+      "path": "Destination Path",
+      "transfer_src": "Source Path",
+      "transfer_src_local": "Source Path (Local)",
+      "transfer_dst": "Destination Path"
+    },
+    "decompress": {
+      "src": "Source Path",
+      "dst": "Destination Path",
+      "inner": "Inner Path",
+      "password": "Extraction Password"
+    },
+    "time_elapsed": "Time Elapsed",
+    "status": "狀態",
+    "err": "錯誤"
+  },
+  "show_only_mine": "Show only my tasks"
+}
