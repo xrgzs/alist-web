@@ -27,7 +27,7 @@
     "ftp": "FTP",
     "traffic": "传输"
   },
-  "title": "AList 管理",
+  "title": "DogList 管理",
   "not_admin": "您不是管理员用户，请使用管理员帐户登录。",
   "logout_success": "退出成功",
   "send": "发送",
