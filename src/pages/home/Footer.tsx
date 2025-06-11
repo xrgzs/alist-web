@@ -10,6 +10,10 @@ export const Footer = () => {
   return (
     <VStack class="footer" w="$full" py="$4">
       <HStack spacing="$1">
+        <Anchor href="https://github.com/xrgzs/dlist" external>
+          {t("home.footer.powered_by")}
+        </Anchor>
+        <span>|</span>
         <AnchorWithBase
           as={Link}
           href={UserMethods.is_guest(me()) ? "/@login" : "/@manage"}

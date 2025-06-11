@@ -195,7 +195,7 @@ export const side_menu_items: SideMenuItem[] = [
   {
     title: "manage.sidemenu.docs",
     icon: FaSolidBook,
-    to: "https://alist",
+    to: "https://dlist",
     role: UserRole.GUEST,
     external: true,
   },
